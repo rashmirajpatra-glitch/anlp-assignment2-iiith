@@ -1,23 +1,39 @@
 [project]
-name = "assignment-2-moe"
+name = "anlp-assignment2"
 version = "0.1.0"
-requires-python = ">=3.11"
+description = "Graduate Advanced NLP Assignment: MoE, Custom Optimizers, and Decoding Strategies"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
 dependencies = [
-    "datasets>=5.0.1",
-    "pyyaml>=6.0.3",
-    "tokenizers>=0.23.2",
-    "torch>=2.9.0",
-    "transformers>=4.57.0",
-    "wandb>=0.29.0",
+    "torch>=2.4.0",
+    "transformers>=4.40.0,<5.0.0",
+    "datasets>=2.18.0",
+    "numpy>=1.26.0",
+    "tokenizers>=0.19.0",
+    "huggingface_hub>=0.23.0",
+    "safetensors>=0.4.3",
+    "wandb>=0.17.0",
+    "einops>=0.8.0",
+    "pyyaml>=6.0",
+    "sacrebleu>=2.4.0",
+    "nltk>=3.8.1",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+    "scipy>=1.12.0",
+    "tqdm>=4.66.0",
+    "pandas>=2.2.0",
+    "torch-directml==0.2.5.dev240914; sys_platform == 'win32'",
 ]
 
-# Install the CUDA build of PyTorch on Linux and Windows.
-[tool.uv.sources]
-torch = [
-    { index = "pytorch-cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.4.0",
 ]
 
-[[tool.uv.index]]
-name = "pytorch-cu126"
-url = "https://download.pytorch.org/whl/cu126"
-explicit = true
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

@@ -1,0 +1,1 @@
+"""Shared components used by the assignment parts."""

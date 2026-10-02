@@ -1,6 +1,69 @@
+# Python artifacts
 __pycache__/
-*.py[cod]
-.venv/
 .pytest_cache/
+.mypy_cache/
 .ruff_cache/
-.wandb/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Model checkpoints & weights (STRICT: keep out of git)
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+runs/
+checkpoints/
+
+# Data & Tokenizer caches
+data/
+.cache/
+huggingface_cache/
+.validation_tokenizer/
+outputs/
+colab_output/
+*.arrow
+*.parquet
+
+# Logs & tracking
+wandb/
+.wandb
+tensorboard/
+*.log
+assets/full/
+
+# Environment variables & secrets
+.env
+.env.*
+*.secret
+
+# IDE and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~

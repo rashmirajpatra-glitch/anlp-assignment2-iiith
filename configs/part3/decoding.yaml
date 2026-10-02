@@ -1,0 +1,33 @@
+profile: smoke
+seed: 42
+model_name: EleutherAI/pythia-160m
+smoke_model_name: hf-internal-testing/tiny-random-GPT2
+dataset_name: hamishivi/ROCStories
+split: test
+num_samples: 1000
+smoke_num_samples: 6
+max_perplexity_samples: 1000
+generation_metric: bleu
+max_new_tokens: 40
+smoke_max_new_tokens: 8
+max_prompt_tokens: 256
+top_k_values: [10, 50, 100]
+smoke_top_k: 10
+top_p_values: [0.9, 0.95]
+smoke_top_p: 0.9
+beam_widths: [1, 2, 4]
+length_penalty: 1.0
+temperature: 1.0
+allow_synthetic_data: false
+smoke_allow_synthetic_data: false
+generations_dir: outputs/part3
+sample_generations_dir: assets
+timing_plot_path: assets/part3_beam_timing_v2.png
+timing_csv_path: assets/part3_beam_timing_v2.csv
+metrics_path: assets/part3_evaluation_results_v2.json
+wandb_project: "anlp-a2-part3"
+wandb_entity: "rashmirajpatra-iiit-hyderabad-org"
+wandb_log_eval: true
+
+hf_repo_id: "raj2k1/part3-pythia160m-decoding"
+push_to_hub: true
